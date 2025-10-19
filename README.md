@@ -27,23 +27,16 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
-1. Type the program in Quartus software.
-2. Compile and run the program.
-3. Generate the RTL schematic and save the logic diagram.
-4. Create nodes for inputs and outputs to generate the timing diagram.
-5. For different input combinations generate the timing diagram.
-   
+
 
 /* write all the steps invloved */
 
 **PROGRAM**
-assign and_out = a & b; // AND gate
-assign or_out = a | b; // OR gate
-assign not_out = ~a; // NOT gate (unary)
-assign nand_out = ~(a & b);// NAND gate
-assign nor_out = ~(a | b);// NOR gate
-assign xor_out = a ^ b; // XOR gate
-assign xnor_out = ~(a ^ b);// XNOR gate
+module up_counter_4bit ( input clk, // Clock signal input reset, // Reset signal (active high) output reg [3:0] q // 4-bit counter output );
+
+always @(posedge clk or posedge reset) begin if (reset) q <= 4'b0000; // Reset counter to 0 else q <= q + 1; // Increment counter on each clock pulse end
+
+endmodule
 
 endmodule**
 
@@ -53,14 +46,18 @@ Developed by:priyadaarshini.v RegisterNumber:25013541
 */
 
 **RTL LOGIC UP COUNTER**
-<img width="690" height="480" alt="image" src="https://github.com/user-attachments/assets/76b1279b-f4dc-4d81-88e1-1a68ff285b4a" />
+<img width="1066" height="553" alt="image" src="https://github.com/user-attachments/assets/1653f905-42f5-47f4-9993-0217ae0e4d6a" />
+
 
 
 **TIMING DIAGRAM FOR IP COUNTER**
-<img width="791" height="232" alt="image" src="https://github.com/user-attachments/assets/a410075c-9712-4beb-bfa1-44899087f2ef" />
+<img width="1056" height="537" alt="image" src="https://github.com/user-attachments/assets/d2ce13aa-6b03-4aa7-a458-64a66a98f9c4" />
+
 
 
 **TRUTH TABLE**
+<img width="667" height="681" alt="image" src="https://github.com/user-attachments/assets/28f5f578-55dd-4f56-b120-21b4a7041026" />
+
 
 **RESULTS**
-Thus the basic logic gates are studied and the truth tables are verified
+Thus 4-BIT-SYNCHRONOUS-COUNTER is verified sucessfully.
