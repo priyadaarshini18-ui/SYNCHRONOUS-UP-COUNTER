@@ -27,10 +27,25 @@ The next flip-flop need only “recognize” that the first flip-flop’s Q outp
 However, the remaining flip-flops should be made ready to toggle only when all lower-order output bits are “high,” thus the need for AND gates.
 
 **Procedure**
+1. Type the program in Quartus software.
+2. Compile and run the program.
+3. Generate the RTL schematic and save the logic diagram.
+4. Create nodes for inputs and outputs to generate the timing diagram.
+5. For different input combinations generate the timing diagram.
+   
 
 /* write all the steps invloved */
 
 **PROGRAM**
+assign and_out = a & b; // AND gate
+assign or_out = a | b; // OR gate
+assign not_out = ~a; // NOT gate (unary)
+assign nand_out = ~(a & b);// NAND gate
+assign nor_out = ~(a | b);// NOR gate
+assign xor_out = a ^ b; // XOR gate
+assign xnor_out = ~(a ^ b);// XNOR gate
+
+endmodule**
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming. 
 
